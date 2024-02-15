@@ -77,4 +77,4 @@ class SocialNetwork:
         print(f"Error: No such user '{username}' is currently logged out.")
 
     def __str__(self):
-        return f"{self.__name} social network:\n" + '\n'.join(map(str, self.__registered_users))
+        return f"{self.__name} social network:\n" + '\n'.join(map(str, self.__registered_users)) + "\n"
