@@ -9,7 +9,7 @@ def create_post(poster, post_type: str, content: str, price: int, place: str) ->
     :param content: Content of the post.
     :param price: Relevant only for a SalePost - price of the item.
     :param place: Relevant only for a SalePost - place to pick the item from.
-    :return:
+    :return: A new Post type, or None if couldn't create a new Post.
     """
     if post_type == "Text":
         post = TextPost(poster, content)
