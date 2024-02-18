@@ -1,7 +1,8 @@
 from bisect import bisect_right
+from typing import Tuple
 
 
-def can_insert_user(users: list, user) -> tuple[bool, int]:
+def can_insert_user(users: list, user) -> Tuple[bool, int]:
     """
     Checks if a given sorted list of users doesn't contain a user who has the same name as a given user.
     Runtime complexity of O(log n) using function from module bisect.

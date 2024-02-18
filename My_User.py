@@ -1,13 +1,7 @@
-from abc import ABC
 import My_Post_Factory
 from My_Notifier import Notifier
 import My_Aux_Functions as Aux
-
-
-# class follower(ABC):
-#     def __init__(self, name: str):
-#         self.__username: str = name
-#         self.__followers: list[User] = []  # sorted list of users who are followers (by username)
+from typing import List
 
 
 class User:
@@ -17,9 +11,9 @@ class User:
     def __init__(self, username: str, password: str):
         self.__username: str = username
         self.__password: str = password
-        self.__followers: list[User] = []  # sorted list of users who are followers (by username)
+        self.__followers: List[User] = []  # sorted list of users who are followers (by username)
         self.is_online: bool = True  # no problems with online status having public access
-        self.__notifications: list[str] = []  # list containing the notifications (strings) of this user
+        self.__notifications: List[str] = []  # list containing the notifications (strings) of this user
         self.__post_count: int = 0
         self.__notifier: Notifier = Notifier(self.__username, self.__followers)  # 'observer' for this user
 
