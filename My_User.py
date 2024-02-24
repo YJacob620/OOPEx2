@@ -84,16 +84,7 @@ class User:
         post = My_Post_Factory.create_post(self, post_type, content, price, place)  # factory design pattern
         self.__post_count += 1
         self.__notifier.post_notify()
-        # self.__notify_followers_about_post()
         return post
-
-    # def __notify_followers_about_post(self) -> None:
-    #     """
-    #     Notifies each follower of this user about a new post of this user.
-    #     """
-    #     notification = self.__username + " has a new post"
-    #     for follower in self.__followers:
-    #         follower.__notifications.append(notification)
 
     def add_notification(self, notification: str) -> None:
         """
