@@ -106,7 +106,11 @@ class SalePost(Post):
         accessible = self.__can_change_post(password)
         if not accessible:
             return
-        new_price = self.__price * (1 - disc / 100)
+        if disc > 100:
+            print(f"ERROR: Invalid discount amount '{disc}'.")
+            return
+        multiplier = 1 - disc / 100
+        new_price = self.__price * multiplier
         self.__price = new_price
         poster_name = self._poster.get_name()
         print("Discount on " + poster_name + " product! the new price is: " + str(new_price))
